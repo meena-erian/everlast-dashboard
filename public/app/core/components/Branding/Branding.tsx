@@ -45,7 +45,7 @@ export class Branding {
       "Don't get in the way of the data",
       'Your single pane of glass',
       'Built better together',
-      'Democratising data',
+      "Don't get in the way of the data",
     ];
     const count = slogans.length;
     return slogans[Math.floor(Math.random() * count)];
