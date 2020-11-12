@@ -47,7 +47,7 @@ export let getVersionLinks = (): FooterLink[] => {
 
   links.push({ text: `v${buildInfo.version} (${buildInfo.commit})` });
 
-  if (buildInfo.hasUpdate) {
+  if (false) {
     links.push({
       text: `New version available!`,
       icon: 'download-alt',
