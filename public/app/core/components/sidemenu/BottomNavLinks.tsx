@@ -97,9 +97,9 @@ export default class BottomNavLinks extends PureComponent<Props, State> {
             </li>
           )}
 
-          <li className="side-menu-header">
+          {/*<li className="side-menu-header">
             <span className="sidemenu-item-text">{link.text}</span>
-          </li>
+          </li>*/}
         </ul>
       </div>
     );
