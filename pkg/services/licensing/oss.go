@@ -38,7 +38,7 @@ func (l *OSSLicensingService) LicenseURL(user *models.SignedInUser) string {
 		return l.Cfg.AppSubUrl + "/admin/upgrading"
 	}
 
-	return "https://grafana.com/products/enterprise/?utm_source=grafana_footer"
+	return "/"
 }
 
 func (l *OSSLicensingService) Init() error {
