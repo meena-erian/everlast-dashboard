@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import config from 'app/core/config';
+//import config from 'app/core/config';
 import { Icon, IconName } from '@grafana/ui';
 
 export interface FooterLink {
@@ -35,27 +35,27 @@ export let getFooterLinks = (): FooterLink[] => {
 };
 
 export let getVersionLinks = (): FooterLink[] => {
-  var { buildInfo, licenseInfo } = config;
-  buildInfo.hideVersion = true;
+  //var { buildInfo, licenseInfo } = config;
+  //buildInfo.hideVersion = true;
   const links: FooterLink[] = [];
-  const stateInfo = licenseInfo.stateInfo ? ` (${licenseInfo.stateInfo})` : '';
+  //const stateInfo = licenseInfo.stateInfo ? ` (${licenseInfo.stateInfo})` : '';
 
-  links.push({ text: `${buildInfo.edition}${stateInfo}`, url: licenseInfo.licenseUrl });
+  //links.push({ text: `${buildInfo.edition}${stateInfo}`, url: licenseInfo.licenseUrl });
 
-  if (buildInfo.hideVersion) {
-    return links;
-  }
+  //if (buildInfo.hideVersion) {
+  //  return links;
+  //}
 
-  links.push({ text: `v${buildInfo.version} (${buildInfo.commit})` });
+  //links.push({ text: `v${buildInfo.version} (${buildInfo.commit})` });
 
-  if (false) {
-    links.push({
-      text: `New version available!`,
-      icon: 'download-alt',
-      url: 'https://grafana.com/grafana/download?utm_source=grafana_footer',
-      target: '_blank',
-    });
-  }
+  //if (false) {
+  //  links.push({
+  //    text: `New version available!`,
+  //    icon: 'download-alt',
+  //    url: 'https://grafana.com/grafana/download?utm_source=grafana_footer',
+  //    target: '_blank',
+  //  });
+  //}
 
   return links;
 };
