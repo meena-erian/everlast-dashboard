@@ -28,7 +28,7 @@ interface FormModel {
 
 const navModel = {
   main: {
-    icon: 'grafana',
+    //icon: 'grafana',
     text: 'Invite',
     subTitle: 'Register your Everlast Dashboard account',
     breadcrumbs: [{ title: 'Login', url: 'login' }],
