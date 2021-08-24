@@ -5,6 +5,7 @@ WORKDIR /usr/src/app/
 COPY package.json yarn.lock ./
 COPY packages packages
 
+RUN npx browserslist@latest --update-db
 
 RUN yarn install --pure-lockfile
 
@@ -15,6 +16,8 @@ COPY scripts scripts
 COPY emails emails
 
 ENV NODE_ENV production
+# RUN npx browserslist@latest --update-db
+# RUN ./node_modules/.bin/grunt build
 RUN yarn build
 
 FROM golang:1.15.1 AS go-builder
