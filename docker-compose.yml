@@ -6,15 +6,18 @@ services:
       - db
     ports: 
       - "3000:3000"
+    volumes: 
+      - ./conf:/usr/share/grafana/conf
   db:
     image: postgres:10
+    ports:
+      - "5442:5432"
     environment:
       - POSTGRES_DB=grafana
       - POSTGRES_PASSWORD=grafana
       - POSTGRES_USER=grafana
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
-      - odoo-db-data:/var/lib/postgresql/data/pgdata
+      - grafana-db-data:/var/lib/postgresql/data/pgdata
 volumes:
-  odoo-web-data:
-  odoo-db-data:
+  grafana-db-data:
