@@ -10,6 +10,7 @@ services:
       - ./conf:/usr/share/grafana/conf
     environment: 
       - GF_INSTALL_PLUGINS=marcusolsson-dynamictext-panel,grafana-simple-json-datasource,grafana-piechart-panel,frser-sqlite-datasource
+    restart: always
   db:
     image: postgres:10
     ports:
@@ -21,5 +22,6 @@ services:
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - grafana-db-data:/var/lib/postgresql/data/pgdata
+    restart: always
 volumes:
   grafana-db-data:
