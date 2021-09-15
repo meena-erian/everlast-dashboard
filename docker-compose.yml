@@ -13,12 +13,12 @@ services:
     restart: always
   db:
     image: postgres:10
-    ports:
-      - "5442:5432"
+    #ports:
+    #  - "5442:5432"
     environment:
-      - POSTGRES_DB=grafana
-      - POSTGRES_PASSWORD=grafana
-      - POSTGRES_USER=grafana
+      - POSTGRES_DB=${GRAFANA_DB_NAME}
+      - POSTGRES_PASSWORD=${GRAFANA_DB_PASSWORD}
+      - POSTGRES_USER=${GRAFANA_DB_USER}
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - grafana-db-data:/var/lib/postgresql/data/pgdata
