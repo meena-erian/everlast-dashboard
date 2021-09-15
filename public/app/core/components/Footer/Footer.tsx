@@ -10,28 +10,21 @@ export interface FooterLink {
 }
 
 export let getFooterLinks = (): FooterLink[] => {
-  return [];
-  /*
+  const msgBody = `subject=Everlast%20Dashboard%20Support&body=Issue%20summary%3A%0D%0A%0D%0A%0D%0ASteps%20to%20reproduce%20the%20Issues%3A`;
   return [
     {
-      text: 'Documentation',
+      text: 'User Manual  ',
       icon: 'document-info',
-      url: 'https://grafana.com/docs/grafana/latest/?utm_source=grafana_footer',
+      url: 'https://docs.google.com/document/d/1ug-_fAYmfwLhydClra2-KOFAhTTGpfbHOg2oA8ygTdQ/edit?usp=sharing',
       target: '_blank',
     },
     {
       text: 'Support',
       icon: 'question-circle',
-      url: 'https://grafana.com/products/enterprise/?utm_source=grafana_footer',
+      url: 'mailto:dashboard@everlastwellness.com?' + msgBody,
       target: '_blank',
     },
-    {
-      text: 'Community',
-      icon: 'comments-alt',
-      url: 'https://community.grafana.com/?utm_source=grafana_footer',
-      target: '_blank',
-    },
-  ];*/
+  ];
 };
 
 export let getVersionLinks = (): FooterLink[] => {
