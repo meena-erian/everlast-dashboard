@@ -34,7 +34,7 @@ RUN go run build.go build
 
 FROM ubuntu:20.04
 
-LABEL maintainer="Grafana team <hello@grafana.com>"
+LABEL maintainer="Meena <meena.erian@everlastdashboard.com>"
 EXPOSE 3000
 
 ARG GF_UID="472"
@@ -73,6 +73,27 @@ COPY --from=go-builder /src/grafana/bin/linux-amd64/grafana-server /src/grafana/
 COPY --from=js-builder /usr/src/app/public public
 COPY --from=js-builder /usr/src/app/tools tools
 COPY packaging/docker/run.sh /
+
+# Installing packages for grafana image renderer
+RUN apt-get update && apt install -y \
+fonts-liberation \
+libappindicator3-1
+
+
+RUN apt-get update && apt install -y libasound2 \
+libgbm1 \
+libnspr4 
+
+
+RUN apt-get update && apt install -y libnss3 \
+libx11-xcb1 \
+libxdamage1 
+
+
+RUN apt-get update && apt install -y libxss1 \
+lsb-release \
+wget \
+xdg-utils
 
 USER grafana
 COPY grafana.db /var/grafana.db
