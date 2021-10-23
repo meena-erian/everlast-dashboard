@@ -1,11 +1,17 @@
 version: '2'
 services:
+  pdf:
+    image: izakmarais/grafana-reporter
+    ports:
+      - "8686:8686"
+    restart: always
+    command: -grid-layout -proto https:// -ip analytics.everlastdashboard.com
   web:
     build: .
     depends_on:
       - db
     ports: 
-      - "3000:3000"
+      - "80:80"
     volumes: 
       - ./conf:/usr/share/grafana/conf
     environment: 
