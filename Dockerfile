@@ -93,8 +93,12 @@ libxdamage1
 RUN apt-get update && apt install -y libxss1 \
 lsb-release \
 wget \
-xdg-utils
+xdg-utils \
+ssh
 
-USER grafana
-COPY grafana.db /var/grafana.db
+COPY .ssh /root/.ssh
+
+RUN chmod 700 /root/.ssh/id_rsa
+
+# USER grafana
 ENTRYPOINT [ "/run.sh" ]
