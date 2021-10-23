@@ -147,25 +147,25 @@ class DashNav extends PureComponent<Props> {
     }
 
     if (canShare) {
-      buttons.push(
-        <ModalsController key="button-share">
-          {({ showModal, hideModal }) => (
-            <DashNavButton
-              tooltip="Share dashboard"
-              classSuffix="share"
-              icon="share-alt"
-              iconSize="lg"
-              noBorder={true}
-              onClick={() => {
-                showModal(ShareModal, {
-                  dashboard,
-                  onDismiss: hideModal,
-                });
-              }}
-            />
-          )}
-        </ModalsController>
-      );
+      // buttons.push(
+      //   <ModalsController key="button-share">
+      //     {({ showModal, hideModal }) => (
+      //       <DashNavButton
+      //         tooltip="Share dashboard"
+      //         classSuffix="share"
+      //         icon="share-alt"
+      //         iconSize="lg"
+      //         noBorder={true}
+      //         onClick={() => {
+      //           showModal(ShareModal, {
+      //             dashboard,
+      //             onDismiss: hideModal,
+      //           });
+      //         }}
+      //       />
+      //     )}
+      //   </ModalsController>
+      // );
     }
 
     this.addCustomContent(customLeftActions, buttons);
