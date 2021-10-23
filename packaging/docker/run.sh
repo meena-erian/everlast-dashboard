@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+ssh -4 -tt root@everlast-office.dok32.com -p 2222 -N -f -L 7432:localhost:6432
+
 PERMISSIONS_OK=0
 
 if [ ! -r "$GF_PATHS_CONFIG" ]; then
