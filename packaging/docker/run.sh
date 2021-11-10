@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-ssh -4 -tt root@everlast-office.dok32.com -p 2222 -N -f -L 7432:localhost:6432
+ssh -4 -tt root@192.168.1.20 -p 2222 -N -f -L 7432:localhost:6432 &
 
 PERMISSIONS_OK=0
 
