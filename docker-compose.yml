@@ -5,7 +5,9 @@ services:
     ports:
       - "8686:8686"
     restart: always
-    command: -grid-layout -proto https:// -ip analytics.everlastdashboard.com
+    volumes:
+      - ./pdf/templates:/templates
+    command: -grid-layout -proto https:// -ip analytics.everlastdashboard.com -templates /templates
   web:
     build: .
     depends_on:
